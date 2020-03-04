@@ -25,13 +25,18 @@ const login = (req, user) => {
 // SIGNUP
 router.post('/signup', (req, res, next) => {
 
-  const {username, password} = req.body;
+  const {username, email, password, comunidad} = req.body;
 
   console.log('username', username)
   console.log('password', password)
+  console.log('email', email)
+  console.log('comunidad', comunidad)
+
+  
+
 
   // Check for non empty user or password
-  if (!username || !password){
+  if (!username || !password || !email) {
     next(new Error('You must provide valid credentials'));
   }
 

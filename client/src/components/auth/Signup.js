@@ -7,21 +7,42 @@ import AuthService from './AuthService'
 class Signup extends Component {
   constructor(props){
     super(props);
-    this.state = { username: '', password: '' };
+    this.state = { username: '', password: '', email: '', comunidad: '' };
     this.service = new AuthService();
   }
+
+  
+
+   // Rutina para agregar opciones a un <select>
+
+  cargar_provincias() {
+  let comunidades = ["Andalucía", "Aragón", "Canarias", "Cantabria", "Castilla y León", "Castilla-La Mancha", "Cataluña", "Ceuta", "Comunidad Valenciana", "Comunidad de Madrid", "Extremadura", "Galicia", "Islas Baleares", "La Rioja", "Melilla", "Navarra", "País Vasco", "Asturias", "Murcia"];
+
+    // Ordena el Array Alfabeticamente, es muy facil ;)):
+      comunidades.sort();
+        return comunidades.map(comunidad => <option>{comunidad}</option>)
+    //addOptions("provincia", comunidades);
+   }
+
+
+   
+  
     
   handleFormSubmit = (event) => {
     event.preventDefault();
     const username = this.state.username;
     const password = this.state.password;
+    const email = this.state.email;
+    const comunidad = this.state.comunidad;
 
     //aquí llamamos al endpoint /signup de nuestra API Rest usando nuestro AuthService
-    this.service.signup(username, password)
+    this.service.signup(username, password, email, comunidad)
     .then( response => {
         this.setState({
             username: "", 
             password: "",
+            email: "",
+            comunidad: ""
         });
         //aquí elevamos el nuevo usuario una vez creado a App usando getUser via props
         //por tanto, informamos a App de que el nuevo usuario ha sido creado, provocando un re-render
@@ -32,6 +53,8 @@ class Signup extends Component {
       this.setState({
         username: username,
         password: password,
+        email: email,
+        comunidad: comunidad,
         error: true
       });
     })
@@ -58,6 +81,22 @@ class Signup extends Component {
             <label>Password:</label>
             <input type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           </fieldset>
+
+          <fieldset>
+            <label>Email:</label>
+            <input type="email" name="email" value={this.state.email} onChange={ e => this.handleChange(e)} />
+          </fieldset>
+
+          <fieldset>
+          <label>Elige tu comunidad autónoma: </label>
+
+          <select name="comunidad" value={this.state.comunidad} onChange={ e => this.handleChange(e)}>
+          
+            {this.cargar_provincias()}
+            </select>
+          </fieldset>
+
+          
           
           <input type="submit" value="Sign up" />
         </form>

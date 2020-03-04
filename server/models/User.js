@@ -2,9 +2,21 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const userSchema = new Schema({
-  username: String,
-  password: String
-}, {
+  username: {type: String, required: true },
+  email: {type: String, required: true},
+  password: {type: String, required: true},
+  // discapacity: {type:String, enum:['Física', 'Psíquica']},
+  comunidad: {type: String, required:true},
+  foundations_created: [{
+    type: Schema.Types.ObjectId,
+    ref: "Foundation"
+  }],
+  projects_suscribe: [{
+    type: Schema.Types.ObjectId,
+    ref: "Project"
+  }],
+ },
+  {
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
