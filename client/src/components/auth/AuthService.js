@@ -14,6 +14,7 @@ class AuthService {
   }
 
   login = (username, password) => {
+    console.log(username, password)
     return this.service.post('/login', {username, password})
     .then(response => response.data)
   }
