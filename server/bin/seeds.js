@@ -7,7 +7,8 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const Foundation = require ("../models/Foundation");
-const Project = require("../models/Project")
+const Project = require("../models/Project");
+require("dotenv").config();
 
 const bcryptSalt = 10;
 
@@ -70,7 +71,7 @@ let users = [
     username: "momo",
     email: "dedwdew@dewdew.com",
     discapacity: "Física",
-    password: 123,
+    password: bcrypt.hashSync("momo", bcrypt.genSaltSync(bcryptSalt)),
     comunidad: "Cantabria",
     foundations_created: [found1],
     projects_suscribe:[proj10]

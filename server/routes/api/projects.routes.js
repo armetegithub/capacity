@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const User = require("../models/User");
-const Project = require("../models/Project");
+const User = require("../../models/User");
+const Project = require("../../models/Project");
 
 //Muestra todas las fundaciones registradas en la plataforma
 router.get("/", (req, res, next) => {

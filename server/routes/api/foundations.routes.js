@@ -1,8 +1,8 @@
 const express = require('express');
 const router  = express.Router();
 
-const User = require('../models/User');
-const Foundation = require('../models/Foundation');
+const User = require('../../models/User');
+const Foundation = require('../../models/Foundation');
 
 
 

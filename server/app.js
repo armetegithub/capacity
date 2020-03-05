@@ -28,7 +28,7 @@ const app = express();
 
 // Middleware Setup
 var whitelist = [
-  'http://localhost:4000'
+  'http://localhost:3000'
 ];
 var corsOptions = {
   origin: function(origin, callback){
@@ -70,11 +70,11 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 
-const authRouter = require('./routes/auth');
-app.use('/api/auth', authRouter);
+app.use('/', require('./routes'));
 
-const foundations = require('./routes/foundations.routes');
-app.use('/api/foundations', foundations);
 
+app.use((req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 module.exports = app;

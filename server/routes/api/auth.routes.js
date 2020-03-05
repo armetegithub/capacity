@@ -1,7 +1,7 @@
 const express = require('express');
   const router  = express.Router();
 const bcrypt = require('bcrypt');
-const User = require('../models/User');
+const User = require('../../models/User');
 const passport = require('passport');
 
 
@@ -59,7 +59,7 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
-  console.log(req,res)
+
   passport.authenticate('local', (err, theUser, failureDetails) => {
     console.log(err, theUser, failureDetails)
 

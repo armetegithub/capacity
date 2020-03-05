@@ -7,7 +7,7 @@ import Navbar from "./components/navbar/Navbar";
 // import ProjectDetails from './components/projects/ProjectDetails';
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
-import AuthService from "./components/auth/AuthService";
+import AuthService from "./service/AuthService";
 import Contents from "./components/contents/Contents";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
