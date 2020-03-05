@@ -13,7 +13,7 @@ require("dotenv").config();
 const bcryptSalt = 10;
 
 mongoose
-  .connect('mongodb://localhost/capacity', {useNewUrlParser: true})
+  .connect(`${process.env.DBURL}`, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
