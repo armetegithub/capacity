@@ -8,7 +8,7 @@ const projectSchema = new Schema({
   project_type: {type: String, enum:['actividad', 'trabajo', 'beca']},
   foundation: {
       type: Schema.Types.ObjectId,
-      ref: "User"
+      ref: "Foundation"
     }
 },
 

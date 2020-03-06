@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import AuthService from "../../service/AuthService";
-
+import logo from "../navbar/capacity_logo.svg";
 
 class Navbar extends Component {
   constructor(props) {
@@ -29,22 +29,26 @@ class Navbar extends Component {
           </ul>
 
           <div className="header">
-        
             <h2>Welcome {this.state.loggedInUser.username} - Ironhacker</h2>
           </div>
         </nav>
       );
     } else {
       return (
-        <div>
+        <div className="navbar-div">
           <nav className="nav-style">
+            <Link to="#">
+              <img src={logo} alt="logo" width="200px" />
+            </Link>
             <ul>
-              <li>
-                <Link to="/signup">Signup</Link>
-              </li>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
+              <div className="right-nav">
+                <li>
+                  <Link to="/signup">Signup</Link>
+                </li>
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+              </div>
             </ul>
           </nav>
         </div>

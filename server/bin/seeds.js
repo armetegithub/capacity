@@ -326,7 +326,7 @@ let foundations = [
       _id: proj1,
       name: "Beca Master en Data science",
       info: "Maser en ciencia de datos. Conviértete en un profesional de sector",
-      imageURL: "https://source.unsplash.com/random?places/800x450",
+      imageURL: "https://source.unsplash.com/random?places/30x30",
       project_type: "beca",
       foundation: found1,
 
@@ -336,7 +336,7 @@ let foundations = [
       _id:proj2,
       name: "Programador en Java",
       info: "Puresto vacante de programador en Java",
-      imageURL: "https://source.unsplash.com/random?places/800x450",
+      imageURL: "https://source.unsplash.com/random?places/30x30",
       project_type: "trabajo",
       foundation: found2,
 
@@ -346,7 +346,7 @@ let foundations = [
       _id:proj3,
       name: "Beca universitaria",
       info: "Beca doctorado en derecho",
-      imageURL: "https://source.unsplash.com/random?places/800x450",
+      imageURL: "https://source.unsplash.com/random?places/30x30",
       project_type: "beca",
       foundation: found3,
 
@@ -356,7 +356,7 @@ let foundations = [
       _id:proj4,
       name: "Clases de Natación",
       info: "Clases de natación en Madrid",
-      imageURL: "https://source.unsplash.com/random?places/800x450",
+      imageURL: "https://source.unsplash.com/random?places/30x30",
       project_type: "actividad",
       foundation: found4,
 
@@ -366,7 +366,7 @@ let foundations = [
       _id:proj5,
       name: "Administrativo",
       info: "Buscamos administrativo en Madrid",
-      imageURL: "https://source.unsplash.com/random?places/800x450",
+      imageURL: "https://source.unsplash.com/random?places/30x30",
       project_type: "trabajo",
       foundation: found5,
 
@@ -376,7 +376,7 @@ let foundations = [
       _id:proj6,
       name: "Visita a la Alhambra",
       info: "Visita a la Alhambra en Granada",
-      imageURL: "https://source.unsplash.com/random?places/800x450",
+      imageURL: "https://source.unsplash.com/random?places/30x30",
       project_type: "actividad",
       foundation: found6,
 
@@ -386,7 +386,7 @@ let foundations = [
       _id:proj7,
       name: "Beca para curso en enfermería",
       info: "Curso de enfermería en Valencia",
-      imageURL: "https://source.unsplash.com/random?places/800x450",
+      imageURL: "https://source.unsplash.com/random?places/30x30",
       project_type: "beca",
       foundation: found7,
 
@@ -396,7 +396,7 @@ let foundations = [
       _id:proj8,
       name: "Gerente de tienda",
       info: "Buscamos gerente de tienda de ropa en Barcelona",
-      imageURL: "https://source.unsplash.com/random?places/800x450",
+      imageURL: "https://source.unsplash.com/random?places/30x30",
       project_type: "trabajo",
       foundation: found8,
 
@@ -406,7 +406,7 @@ let foundations = [
       _id:proj9,
       name: "Beca para curso de mecánica",
       info: "Becae para curso de mecánica en Asturias",
-      imageURL: "https://source.unsplash.com/random?places/800x450",
+      imageURL: "https://source.unsplash.com/random?places/30x30",
       project_type: "beca",
       foundation: found9,
 
@@ -416,17 +416,12 @@ let foundations = [
       _id:proj10,
       name: "Partido de baloncesto",
       info: "Partido de baloncesto en silla de ruedas",
-      imageURL: "https://source.unsplash.com/random?places/800x450",
+      imageURL: "https://source.unsplash.com/random?places/30x30",
       project_type: "actividad",
       foundation: found10,
 
     },
   ]
-
-
-  
-
-
 
 
 

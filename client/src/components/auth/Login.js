@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from '../../service/AuthService';
+import "./Login.scss"
 
 class Login extends Component {
   constructor(props) {
@@ -40,11 +41,12 @@ class Login extends Component {
   }
 
   render() {
+    console.log("Dentro de login")
+    return (
+    <div>
+      <h3>Welcome to Capcity</h3>
 
-    return (<div>
-      <h3>Please, login to our site</h3>
-
-      <form onSubmit={this.handleFormSubmit}>
+      <form className="form-container" onSubmit={this.handleFormSubmit}>
         <fieldset>
           <label>Username:</label>
           <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />

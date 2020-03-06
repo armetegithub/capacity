@@ -7,14 +7,16 @@ const Project = require("../../models/Project");
 //Muestra todas las fundaciones registradas en la plataforma
 router.get("/", (req, res, next) => {
   Project.find()
+
+    .populate('foundation')
     .then(allProjects => res.json(allProjects))
     .catch(err => console.log(err));
 });
 
-//Muestra los proyectod creados por una fundación
+//Muestra los proyectos creados por una fundación
 router.get("/:id", (req, res, next) => {
-  User.findById(req.params.id)
-    .populate("foundation")
+  Project.findById(req.params.id)
+    
     .then(allProjects => res.json(allProjects))
     .catch(err => console.log(err));
 });

@@ -1,0 +1,28 @@
+.form-container{
+	width:450px;
+	padding:55px;
+	margin: 10px 450px;
+	background: rgba(255, 255, 255, 0.404);
+	border-radius: 10px;
+
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	& input {
+		padding: 5px 60px;
+		border-radius: 10px;
+		border:none;
+    color: black;
+		outline: none;
+
+		& :focus {
+
+			border: 1px solid ;
+			border-color: #DF181B;
+		}
+		
+	}
+
+}

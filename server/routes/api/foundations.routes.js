@@ -14,17 +14,30 @@ router.get('/', (req, res, next) =>{
     .catch(err => console.log(err));
 });
 
+
 //Muestra las fundaciones creadas por un usuario
 router.get('/:id', (req, res, next) => {
-    User.findById(
-        req.params.id
-    )
+    User.findById(req.params.id)
     .populate('foundations_created')
     .then(allFoundations => res.json(allFoundations))
     .catch(err => console.log(err))
 
 });
 
+
+router.get('/:id', (req, res, next) => {
+  Foundation.findById(
+      req.params.id
+  )
+  .then(oneFoundation => res.json(oneFoundation))
+  .catch(err => console.log(err))
+
+});
+
+
+
+
+// Añade una fundación
 router.post('/add', (req, res, next) => {
 
    Foundation.create(
@@ -42,8 +55,8 @@ router.put("/edit/:id", (req, res, next) => {
 });
 
 router.delete("/delete/:id", (req, res, next) => {
-      Foundation.findByIdAndDelete(req.params.id).then(deletedFoundation =>
-    res.json({ deleted: true, deletedFoundation })
+      Foundation.findByIdAndDelete(req.params.id).then(deleteFoundation =>
+    res.json({ deleted: true, deleteFoundation })
   );
 });
 
