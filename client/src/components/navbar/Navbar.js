@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import AuthService from "../../service/AuthService";
 import logo from "../navbar/capacity_logo.svg";
 
+
+
+
 class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +41,7 @@ class Navbar extends Component {
         <div className="navbar-div">
           <nav className="nav-style">
             <Link to="#">
-              <img src={logo} alt="logo" width="200px" />
+              <img src={logo} alt="logo" width="400px" class="logo" />
             </Link>
             <ul>
               <div className="right-nav">

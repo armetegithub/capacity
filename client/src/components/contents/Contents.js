@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import ProjectItem from './ProjectItem';
+import './Content.scss';
+import 'typeface-roboto';
+import portada from '../contents/portada1.svg'
+
+
 
 //clase componente que renderiza los contenidos genéricos
 //usando rendering condicional y el componente Switch que ya conocéis podéis mostrar los contenidos oportunos que queráis
@@ -14,12 +19,25 @@ class Contents extends Component {
   }
 
   render() {
-    return (<div>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        
+    return (<div className="contents">
+
+      <div className="cabecera-portada">
+        <h1>Bienvenidos a capacity</h1>
+        <h2>¿Estás listo para poner al máximo tus capacidades?</h2>
+        <img src={portada} alt="portada" width="600px" class="portada" />
+      </div>
+
+      <h3>ÚLTIMOS PROYECTOS</h3>
+       
+        <div className= "contenedor">
+    
+          
         {this.props.projects.map(project=>(
+       
             <ProjectItem project={project} key={project._id}/>
+          
         ))}
+        </div>
         
         </div>
        

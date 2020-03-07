@@ -1,8 +1,11 @@
 .despliegue{
 
-    h1{
-        font-size: 12px;
-    }
+  
+     width: 300px;
+     height: 450px;
+     margin-right: 50px;
 
-    
+  & img{
+      height: 200px;
+  }
 }
