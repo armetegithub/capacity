@@ -6,7 +6,8 @@ import logo from "../navbar/capacity_logo.svg";
 
 
 
-class Navbar extends Component {
+
+class Navigator extends Component {
   constructor(props) {
     super(props);
     this.state = { loggedInUser: null };
@@ -24,28 +25,17 @@ class Navbar extends Component {
   render() {
     if (this.state.loggedInUser) {
       return (
-    
-        <div className="navbar-div">
-          <nav className="nav-style">
-            <Link to="#">
-              <img src={logo} alt="logo" width="400px" class="logo" />
-            </Link>
-            <ul>
-              <div className="right-nav">
-                <li>
-                  <Link to="/foundations">Fundaciones</Link>
-                </li>
-                <li>
-                  <Link to="/projects">Proyectos</Link>
-                </li>
-                <li>
-                  <a onClick={this.handleLogout}>Logout</a>
-                </li>
-              </div>
-              <span>Hola, {this.state.loggedInUser.username}</span>
-            </ul>
-          </nav>
-        </div>
+        <nav className="nav-style">
+          <ul>
+            <li>
+              <a onClick={this.handleLogout}>Logout</a>
+            </li>
+          </ul>
+
+          <div className="header">
+            <h2>Welcome {this.state.loggedInUser.username} - Ironhacker</h2>
+          </div>
+        </nav>
       );
     } else {
       return (
@@ -71,4 +61,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default Navigator;

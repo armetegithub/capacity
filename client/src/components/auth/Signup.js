@@ -61,8 +61,8 @@ class Signup extends Component {
     })
   }
 
-  handleChange = (event) => {  
-    const {name, value} = event.target;
+  handleChange = (e) => {  
+    const {name, value} = e.target;
     this.setState({[name]: value});
   }
       
@@ -70,7 +70,7 @@ class Signup extends Component {
   render() {
     return(
       <div>
-        <h3>Welcome!, create your account next:</h3>
+        <h3>Bienvenido, Por favor, crea tu cuenta</h3>
 
         <form onSubmit={this.handleFormSubmit}>
           <fieldset>

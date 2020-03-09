@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import AuthService from '../../service/AuthService';
 import "./Login.scss"
 
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -25,6 +26,7 @@ class Login extends Component {
         });
 
         this.props.getUser(response)
+        this.props.history.push('/projects')
       })
       .catch(error => {
         this.setState({
@@ -43,10 +45,10 @@ class Login extends Component {
   render() {
     console.log("Dentro de login")
     return (
-    <div>
-      <h3>Welcome to Capcity</h3>
+    <div className="container-form">
+      <h3>Welcome to Capacity</h3>
 
-      <form className="form-container" onSubmit={this.handleFormSubmit}>
+      <form className="form-style-9" onSubmit={this.handleFormSubmit}>
         <fieldset>
           <label>Username:</label>
           <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />

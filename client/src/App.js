@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.scss";
 import { Switch, Route, Redirect } from "react-router-dom";
-
 // import ProjectList from './components/projects/ProjectList';
 import Navbar from "./components/navbar/Navbar";
 // import ProjectDetails from './components/projects/ProjectDetails';
@@ -9,7 +8,14 @@ import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import AuthService from "./service/AuthService";
 import Contents from "./components/contents/Contents";
-import ProjectsService from './service/ProjectsService';
+import ProjectsService from "./service/ProjectsService";
+import Projects from "./components/Projects/Projects";
+import Foundations from "./components/Foundations/Foundations";
+import FoundationsService from "./service/FoundationsService";
+import SearchBar from "./components/Searchbar/SearchBar";
+import ProjectDetail from "./components/Projects/ProjectDetail";
+import FoundationDetail from "./components/Foundations/FoundationDetail"
+import Navigator from "./components/navbar/Navigavtor";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
@@ -17,18 +23,23 @@ class App extends Component {
   constructor(props) {
     super(props);
     //arrancamos el estado con un valor de loggedInUser con nada (luego lo vamos a reemplazar con el valor real)
-    this.state = { 
+    this.state = {
       loggedInUser: null,
-      projects : []
-     };
+      projects: [],
+      foundations: [],
+    
+    };
     this.service = new AuthService();
     this.ProjectsService = new ProjectsService();
-    this.fetchUser()
+    this.FoundationsService = new FoundationsService();
+    this.fetchUser();
+    this.fetchProjects();
+    this.fetchFoundations();
   }
 
   getUser = userObj => {
     this.setState({
-      loggedInUser: userObj,
+      loggedInUser: userObj
     });
   };
 
@@ -44,45 +55,94 @@ class App extends Component {
       .loggedin()
       .then(response => {
         this.setState({
-          loggedInUser: response,
+          loggedInUser: response
         });
       })
       .catch(err => {
         this.setState({
-          loggedInUser: false,
+          loggedInUser: false
         });
       });
   }
 
   fetchProjects = () => {
-    return this.ProjectsService.allProjects()
-    .then(allProjects => {
+    return this.ProjectsService.allProjects().then(allProjects => {
       this.setState({
         projects: allProjects
+      });
+    });
+  };
+
+  fetchOneProject = () => {
+    return this.ProjectService.oneProject().then(oneProject => {
+      this.setState({
+        project: oneProject
+      });
+    });
+  };
+
+  fetchFoundations = () => {
+    return this.FoundationsService.allFoundations().then(allFoundations => {
+      this.setState({
+        foundations: allFoundations
+      });
+    });
+  };
+
+  fetchOneFoundation = () => {
+
+    return this.FoundationsService.oneFoundation().then(oneFoundation => {
+      this.setState({
+        foundation: oneFoundation
       })
     })
   }
 
   render() {
-    const { projects } = this.state
-    console.log(projects)
+    
     //aqui hacemos rendering condicional dependiendo de si tenemos un usuario logeado o no
     if (this.state.loggedInUser) {
       //en este caso mostramos los contenidos ya que hay usuario
       return (
         <React.Fragment>
-
           <div className="App">
             <header className="App-header">
-              <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+              {/* <Navigator /> */}
+              <Navbar
+                className="navbar"
+                userInSession={this.state.loggedInUser}
+                logout={this.logout}
+              />
             </header>
-              <Switch>
-                <Route exact path="/" render={() => <Contents fetchProjects={this.fetchProjects} projects={this.state.projects}/>} />
-                {/* <Route exact path="projects" render={() => <Projects fetchProjects={this.fetchProjects} projects={this.state.projects}/>}/> */}
+            <Switch>
+              {/* Muestra todos los proyectos */}
+              <Route
+                exact
+                path="/projects"
+                render={() => (
+                  <Projects
+                    fetchProjects={this.fetchProjects}
+                    projects={this.state.projects}
+                  />
+                )}
+              />
+             
+              {/* Muestra todas las fundaciones */}
+              <Route
+                exact
+                path="/foundations"
+                render={() => (
+                  <Foundations
+                    fetchFoundations={this.fetchFoundations}
+                    foundations={this.state.foundations}
+                  />
+                )}
+              />
+               <Route path="/projects/:id" render={props => <ProjectDetail {...props}/>}/>
 
-                {/* <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
-                <Route exact path="/login" render={() => <Login getUser={this.getUser} />} /> */}
-              </Switch>
+               <Route path="/foundations/:id" render={props => <FoundationDetail {...props}/>}/>
+
+            </Switch>
           </div>
         </React.Fragment>
       );
@@ -90,16 +150,35 @@ class App extends Component {
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
         <React.Fragment>
-
           <div className="App">
             <header className="App-header">
-              <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+              <Navbar
+                userInSession={this.state.loggedInUser}
+                logout={this.logout}
+              />
             </header>
-              <Switch>
-                <Route exact path="/" render={() => <Contents fetchProjects={this.fetchProjects} projects={this.state.projects}/>} />
-                <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
-                <Route exact path="/login" render={() => <Login getUser={this.getUser} />} />
-              </Switch>
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={() => (
+                  <Contents
+                    fetchProjects={this.fetchProjects}
+                    projects={this.state.projects}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/signup"
+                render={() => <Signup getUser={this.getUser} />}
+              />
+              <Route
+                exact
+                path="/login"
+                render={(props) => <Login getUser={this.getUser} {...props}/>}
+              />
+            </Switch>
           </div>
         </React.Fragment>
       );

@@ -11,10 +11,10 @@ const foundationSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Project"
   }],
-  admin:[{
+  admin:{
     type: Schema.Types.ObjectId,
     ref: "User"
-  }],
+  },
   imageURL: String
 
 }, {
