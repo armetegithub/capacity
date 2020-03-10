@@ -2,11 +2,11 @@ import React from "react";
 
 import ProjectsService from "../../service/ProjectsService";
 
-export default class NewFoundation extends React.Component {
-  ProjectsService = new ProjectsService();
+export default class NewProject extends React.Component {
+  projectsService = new ProjectsService();
 
   state = {
-     name: "", description: "", email: "", comunidad: "" 
+     name: "", info: ""
   };
 
   componentDidMount() {}
@@ -17,27 +17,19 @@ export default class NewFoundation extends React.Component {
   };
   handleFormSubmit = e => {
     e.preventDefault();
-    this.ProjectsService.addFoundation(this.state);
+    this.projectsService.addProject(this.state);
   };
 
-  cargar_provincias() {
-    let comunidades = ["Andalucía", "Aragón", "Canarias", "Cantabria", "Castilla y León", "Castilla-La Mancha", "Cataluña", "Ceuta", "Comunidad Valenciana", "Comunidad de Madrid", "Extremadura", "Galicia", "Islas Baleares", "La Rioja", "Melilla", "Navarra", "País Vasco", "Asturias", "Murcia"];
-  
-      // Ordena el Array Alfabeticamente, es muy facil ;)):
-        comunidades.sort();
-          return comunidades.map(comunidad => <option>{comunidad}</option>)
-      //addOptions("provincia", comunidades);
-     }
 
 
   render() {
     return (
-      <div className="NewFoundation">
-        <h1>New Foundation Page</h1>
+      <div className="NewProject">
+        <h1>New Project Page</h1>
 
         <form onSubmit={this.handleFormSubmit}>
           <fieldset>
-            <label>Nombre de la fundación:</label>
+            <label>Nombre de la proyecto:</label>
             <input
               type="text"
               name="name"
@@ -46,38 +38,17 @@ export default class NewFoundation extends React.Component {
             />
           </fieldset>
           <fieldset>
-            <label>Describe tu fundación:</label>
+            <label>Describe tu proyecto:</label>
             <textarea 
               cols="40" rows="5"
               type="text"
-              name="description"
+              name="info"
               value={this.state.description}
               onChange={e => this.handleChange(e)}
             />
           </fieldset>
 
-          <fieldset>
-            <label>Email de la fundación:</label>
-            <input
-              type="email"
-              name="email"
-              value={this.state.email}
-              onChange={e => this.handleChange(e)}
-            />
-          </fieldset>
-
-          <label>Elige tu comunidad autónoma: </label>
-
-          <fieldset>
-            <select
-              name="comunidad"
-              value={this.state.comunidad}
-              onChange={e => this.handleChange(e)}
-            >
-              {this.cargar_provincias()}
-            </select>
-          </fieldset>
-          <input type="submit" value="Crear nueva asociación" />
+          <input type="submit" value="Crear nuevo proyecto" />
         </form>
       </div>
     );

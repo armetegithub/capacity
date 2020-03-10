@@ -26,6 +26,7 @@ export default class FoundationDetail extends React.Component {
     console.log(this.state.foundation);
     return (
       <div className="foundation">
+      <Link to="/addproject">Crear Nuevo Proyecto</Link>
         {this.state.foundation ? (
           <div className="detail-view">
             <h1>{this.state.foundation.name}</h1>

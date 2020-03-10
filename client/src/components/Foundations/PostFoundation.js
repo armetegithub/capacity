@@ -6,7 +6,7 @@ export default class NewFoundation extends React.Component {
   foundationsService = new FoundationsService();
 
   state = {
-     name: "", description: "", email: "", comunidad: "" 
+     name: "", info: "", project_type: "", comunidad: "" 
   };
 
   componentDidMount() {}
@@ -77,7 +77,7 @@ export default class NewFoundation extends React.Component {
               {this.cargar_provincias()}
             </select>
           </fieldset>
-          <input type="submit" value="Crear nueva asociación" />
+          <input type="submit" value="Crear nueva fundación" />
         </form>
       </div>
     );

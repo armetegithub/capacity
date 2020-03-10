@@ -23,6 +23,11 @@ class ProjectsService {
 
     oneProject = id => this.service.get(`/${id}`).then(response => response.data);
 
+    addProject = project => {
+      console.log(project)
+      this.service.post('/addproject', project).then(response => response.data);
+    };
+
 
 
      

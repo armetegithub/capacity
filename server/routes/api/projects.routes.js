@@ -21,10 +21,16 @@ router.get("/:id", (req, res, next) => {
     .catch(err => console.log(err));
 });
 
-router.post("/add", (req, res, next) => {
-  Project.create(req.body).then(newProject => res.json(newProject));
-});
-
+router.post('/addproject', (req, res, next) => {
+  console.log(req.body)
+   Project.create(req.body)
+   .then (newProject => {
+     console.log(newProject)
+     res.json(newProject)
+    })
+    .catch(err => console.log(err))
+         
+})
 router.put("/edit/:id", (req, res, next) => {
   Project.findByIdAndUpdate(req.params.id, req.body).then(updatedFoundation =>
     res.json(updatedFoundation)

@@ -17,6 +17,7 @@ import ProjectDetail from "./components/Projects/ProjectDetail";
 import FoundationDetail from "./components/Foundations/FoundationDetail";
 import Navigator from "./components/navbar/Navigavtor";
 import NewFoundation from "./components/Foundations/PostFoundation";
+import NewProject from "./components/Projects/PostProject";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends React.Component {
@@ -107,6 +108,14 @@ class App extends React.Component {
     })
   }
 
+  addProject = () => {
+    return this.ProjectsService.addProject().then(addProject => {
+      this.setState({
+        projects: addProject
+      })
+    })
+  }
+
   render() {
     //aqui hacemos rendering condicional dependiendo de si tenemos un usuario logeado o no
     if (this.state.loggedInUser) {
@@ -159,7 +168,13 @@ class App extends React.Component {
               <Route path="/addFoundation"
               render={() => (
                 <NewFoundation />
+              )}></Route>
+
+              <Route path="/addproject"
+              render={() => (
+                <NewProject />
               )}
+
             />
               
             </Switch>
