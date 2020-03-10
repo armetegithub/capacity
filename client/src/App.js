@@ -18,6 +18,7 @@ import FoundationDetail from "./components/Foundations/FoundationDetail";
 import Navigator from "./components/navbar/Navigavtor";
 import NewFoundation from "./components/Foundations/PostFoundation";
 import NewProject from "./components/Projects/PostProject";
+import UserDetail from "./components/User/UserDetail";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends React.Component {
@@ -67,6 +68,17 @@ class App extends React.Component {
       });
   }
 
+
+
+  fetchOneUser = () => {
+
+    return this.UserService.oneService().then(oneUser => {
+      this.setState({
+        user: oneUser
+      })
+    })
+  }
+
   fetchProjects = () => {
     return this.ProjectsService.allProjects().then(allProjects => {
       this.setState({
@@ -75,13 +87,13 @@ class App extends React.Component {
     });
   };
 
-  fetchOneProject = () => {
-    return this.ProjectService.oneProject().then(oneProject => {
-      this.setState({
-        project: oneProject
-      });
-    });
-  };
+  // fetchOneProject = () => {
+  //   return this.ProjectService.oneProject().then(oneProject => {
+  //     this.setState({
+  //       project: oneProject
+  //     });
+  //   });
+  // };
 
   fetchFoundations = () => {
     return this.FoundationsService.allFoundations().then(allFoundations => {
@@ -173,9 +185,12 @@ class App extends React.Component {
               <Route path="/addproject"
               render={() => (
                 <NewProject />
-              )}
+              )}></Route>
 
-            />
+              <Route path="/account/:id"
+              render={() => (<UserDetail userInSession={this.state.loggedInUser} getUser={this.getUser}/> 
+              )}></Route>
+           
               
             </Switch>
           </div>

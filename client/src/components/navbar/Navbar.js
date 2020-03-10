@@ -32,6 +32,9 @@ class Navbar extends Component {
             </Link>
             <ul>
               <div className="right-nav">
+              <li>
+                  <Link to={`/account/user/${this.state.loggedInUser._id}`}>Perfil</Link>
+                </li>
                 <li>
                   <Link to="/foundations">Fundaciones</Link>
                 </li>
