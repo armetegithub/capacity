@@ -15,8 +15,20 @@ class ProjectsService {
         });
     }
 
+    subscribeProject = (idProject, idUser) => {
+      console.log(idUser)
+      return this.service.post(`/subscribe/${idProject}`, idUser)
+      .then(response => response.data)
+    }
+
     oneProject = id => this.service.get(`/${id}`).then(response => response.data);
+
+
+
+     
+  
   }
+
 
   
 

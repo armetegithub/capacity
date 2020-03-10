@@ -329,6 +329,7 @@ let foundations = [
       imageURL: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
       project_type: "beca",
       foundation: found1,
+      subscribers:[]
 
     },
 
@@ -339,6 +340,7 @@ let foundations = [
       imageURL: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
       project_type: "trabajo",
       foundation: found2,
+      subscribers:[]
 
     },
 
@@ -349,6 +351,7 @@ let foundations = [
       imageURL: "https://static3.burgosconecta.es/www/multimedia/201904/08/media/cortadas/beca-kItE-U701114614184QLD-624x385@El%20Norte.jpg",
       project_type: "beca",
       foundation: found3,
+      subscribers:[]
 
     },
 
@@ -359,6 +362,7 @@ let foundations = [
       imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Daniel_Dias_ganha_ouro_na_Nata%C3%A7%C3%A3o_modalidade_100m_livre_S5_%2829122807774%29.jpg/300px-Daniel_Dias_ganha_ouro_na_Nata%C3%A7%C3%A3o_modalidade_100m_livre_S5_%2829122807774%29.jpg",
       project_type: "actividad",
       foundation: found4,
+      subscribers:[]
 
     },
 
@@ -369,6 +373,7 @@ let foundations = [
       imageURL: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80s",
       project_type: "trabajo",
       foundation: found5,
+      subscribers:[]
 
     },
 
@@ -379,6 +384,7 @@ let foundations = [
       imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg/270px-Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg",
       project_type: "actividad",
       foundation: found6,
+      subscribers:[]
 
     },
 
@@ -389,6 +395,7 @@ let foundations = [
       imageURL: "https://www.viveusa.mx/sites/default/files/field/image/enfermeras.jpg",
       project_type: "beca",
       foundation: found7,
+      subscribers:[]
 
     },
 
@@ -399,6 +406,7 @@ let foundations = [
       imageURL: "https://www.tuotrodiario.com/imagenes/noticias/2019030579774/mercadona-realiza-inversion-millonaria-uniformes/0-251-946/mercadona-ep-z.jpg",
       project_type: "trabajo",
       foundation: found8,
+      subscribers:[]
 
     },
 
@@ -409,6 +417,7 @@ let foundations = [
       imageURL: "https://s3.eu-west-3.amazonaws.com/implika-pro/course_image/0001/01/thumb_136_course_image_big.jpeg",
       project_type: "beca",
       foundation: found9,
+      subscribers:[]
 
     },
 
@@ -419,6 +428,7 @@ let foundations = [
       imageURL: "https://files.laligasports.es/201606/1024x800_bffa85df8b29084429image.jpeg?29616105247",
       project_type: "actividad",
       foundation: found10,
+      subscribers:[]
 
     },
   ]

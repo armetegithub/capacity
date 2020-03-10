@@ -16,6 +16,13 @@ class FoundationsService {
     }
 
 
+    addFoundation = foundation => {
+      console.log(foundation)
+      this.service.post('/addFoundation', foundation).then(response => response.data);
+    };
+
+
+
     oneFoundation = id => this.service.get(`/${id}`).then(response => response.data);
 }
 

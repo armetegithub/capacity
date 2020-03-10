@@ -14,11 +14,13 @@ import Foundations from "./components/Foundations/Foundations";
 import FoundationsService from "./service/FoundationsService";
 import SearchBar from "./components/Searchbar/SearchBar";
 import ProjectDetail from "./components/Projects/ProjectDetail";
-import FoundationDetail from "./components/Foundations/FoundationDetail"
+import FoundationDetail from "./components/Foundations/FoundationDetail";
 import Navigator from "./components/navbar/Navigavtor";
+import NewFoundation from "./components/Foundations/PostFoundation";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
-class App extends Component {
+class App extends React.Component {
+
   //en el tiempo de construcción de la aplicación, creamos una instancia del authservice
   constructor(props) {
     super(props);
@@ -26,8 +28,7 @@ class App extends Component {
     this.state = {
       loggedInUser: null,
       projects: [],
-      foundations: [],
-    
+      foundations: []
     };
     this.service = new AuthService();
     this.ProjectsService = new ProjectsService();
@@ -90,16 +91,23 @@ class App extends Component {
   };
 
   fetchOneFoundation = () => {
-
     return this.FoundationsService.oneFoundation().then(oneFoundation => {
       this.setState({
         foundation: oneFoundation
+      });
+    });
+  };
+
+  addFoundation = () => {
+    return this.FoundationsService.addFoundation().then(addFoundation => {
+
+      this.setState({
+        foundations: addFoundation
       })
     })
   }
 
   render() {
-    
     //aqui hacemos rendering condicional dependiendo de si tenemos un usuario logeado o no
     if (this.state.loggedInUser) {
       //en este caso mostramos los contenidos ya que hay usuario
@@ -125,8 +133,8 @@ class App extends Component {
                     projects={this.state.projects}
                   />
                 )}
-              />
-             
+              />k
+
               {/* Muestra todas las fundaciones */}
               <Route
                 exact
@@ -138,14 +146,31 @@ class App extends Component {
                   />
                 )}
               />
-               <Route path="/projects/:id" render={props => <ProjectDetail {...props}/>}/>
+              <Route
+                path="/projects/:id"
+                render={props => <ProjectDetail {...props} loggedInUser={this.state.loggedInUser} />}
+              />
 
-               <Route path="/foundations/:id" render={props => <FoundationDetail {...props}/>}/>
+              <Route
+                path="/foundations/:id"
+                render={props => <FoundationDetail {...props} />}
+              />
 
+              <Route path="/addFoundation"
+              render={() => (
+                <NewFoundation />
+              )}
+            />
+              
             </Switch>
           </div>
         </React.Fragment>
       );
+
+
+
+
+      
     } else {
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
@@ -176,7 +201,7 @@ class App extends Component {
               <Route
                 exact
                 path="/login"
-                render={(props) => <Login getUser={this.getUser} {...props}/>}
+                render={props => <Login getUser={this.getUser} {...props} />}
               />
             </Switch>
           </div>

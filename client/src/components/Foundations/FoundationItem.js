@@ -9,10 +9,10 @@ function FoundationtItem(props) {
        
       <Link to={`/foundations/${props.foundation._id}`}><h1>{props.foundation.name}</h1></Link>
       <Link to={`/foundations/${props.foundation._id}`}><img src={props.foundation.imageURL} width="300px" /></Link>
-      <p>{props.foundation.projects}</p>
+      <p>{props.foundation.description}</p>
        
         {/* {props.project.foundation.name} */}
-        <button>Más Información</button>
+      
       </div>
     </div>
   );

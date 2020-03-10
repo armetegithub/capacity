@@ -11,10 +11,6 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Foundation"
   }],
-  projects_suscribe: [{
-    type: Schema.Types.ObjectId,
-    ref: "Project"
-  }],
  },
   {
   timestamps: {

@@ -9,7 +9,11 @@ const projectSchema = new Schema({
   foundation: {
       type: Schema.Types.ObjectId,
       ref: "Foundation"
-    }
+    },
+    subscribers: [{
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    }]
 },
 
 {

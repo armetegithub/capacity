@@ -14,8 +14,15 @@ export default class ProjectDetail extends React.Component {
     this.services = new ProjectsService();
   }
 
- 
+ subscribeProject = () =>{
 
+  this.services.subscribeProject(this.state.project._id, 
+    {newSuscriber: this.props.loggedInUser._id })
+  .then(updateProject => this.setState({specificProject: updateProject}))
+  .catch(err => console.log(err));
+  
+
+ }
   componentDidMount = () => this.oneProject();
   oneProject = () => {
     this.services
@@ -25,14 +32,15 @@ export default class ProjectDetail extends React.Component {
   };
 
   render() {
-    console.log(this.state.project);
+    console.log(this.props.loggedInUser);
     return (
       <div className="Project">
         {this.state.project ? (
           <div className="detail-view">
             <h1>{this.state.project.name}</h1>
             <img src={this.state.project.imageURL} />
-        <p>{this.state.project.info}</p>
+            <p>{this.state.project.info}</p>
+            <button onClick={()=>this.subscribeProject()}>Inscribirse</button>
           </div>
         ) : (
           console.log("No hay na")

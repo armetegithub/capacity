@@ -38,12 +38,14 @@ router.get('/:id', (req, res, next) => {
 
 
 // Añade una fundación
-router.post('/add', (req, res, next) => {
-
-   Foundation.create(
-      req.body
-   )
-   .then (newFoundation => res.json(newFoundation));
+router.post('/addfoundation', (req, res, next) => {
+  console.log(req.body)
+   Foundation.create(req.body)
+   .then (newFoundation => {
+     console.log(newFoundation)
+     res.json(newFoundation)
+    })
+    .catch(err => console.log(err))
          
 })
 

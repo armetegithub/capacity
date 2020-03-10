@@ -37,4 +37,17 @@ router.delete("/delete/:id", (req, res, next) => {
   );
 });
 
+
+
+router.post("/subscribe/:id", (req, res) => {
+  console.log(req.params.id)
+  let project = req.params.id;
+
+  console.log(req.body, project)
+  
+  Project.findByIdAndUpdate(project,  {$push: {subscribers: req.body.newSuscriber}})
+  .then(()=> res.json({ok:true}))
+  .catch((err)=>res.json(err))
+});
+
 module.exports = router;
