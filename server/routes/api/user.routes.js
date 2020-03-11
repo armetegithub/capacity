@@ -7,9 +7,14 @@ const User = require("../../models/User");
 
 router.get("/account/:id", (req, res, next) => {
     User.findById(req.params.id)
-      .populate("projects_suscribe")
-      .then(userProjects => res.json(userProjects))
+      .populate("foundations_created")
+      .then(userFoundations => {
+        console.log(userFoundations);
+        res.json(userFoundations)})
+
       .catch(err => console.log(err));
+   
+
   });
 
 

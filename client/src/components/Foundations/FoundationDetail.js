@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import FoundationsService from "../../service/FoundationsService";
 import ProjectItem from "../contents/ProjectItem";
 import './FoundationDetail.scss';
+import SearhcBar from "../Searchbar/SearchBar";
 export default class FoundationDetail extends React.Component {
   
 
@@ -27,6 +28,7 @@ export default class FoundationDetail extends React.Component {
     return (
       <div className="foundation">
       <Link to="/addproject">Crear Nuevo Proyecto</Link>
+
         {this.state.foundation ? (
           <div className="detail-view">
             <h1>{this.state.foundation.name}</h1>

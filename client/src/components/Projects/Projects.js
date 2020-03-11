@@ -22,10 +22,9 @@ class Projects extends Component {
   render() {
     return (
       <div className="contents">
+        <h3>PROYECTOS</h3>
         <div className="projects-search">
-          <h3>PROYECTOS</h3>
-
-          <SearhcBar handleSearch={this.handleSearch} />
+          <SearhcBar  handleSearch={this.handleSearch} />
         </div>
 
         <div className="contenedor">

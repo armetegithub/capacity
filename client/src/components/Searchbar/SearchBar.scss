@@ -16,7 +16,7 @@
         transition: all .25s ease-in .25s;
        
 		color: transparent;
-		font-size: .75rem;
+		font-size: 1rem;
 		line-height:25px;
 		&:hover {
 			cursor: pointer;
@@ -58,7 +58,7 @@
 				transform-origin: left top;
 				content: '';
 				position: absolute;
-				width: 10px;
+				width: 20px;
 				height: 5px;
 				border-radius: 5px;
 				background: #4A72B2;

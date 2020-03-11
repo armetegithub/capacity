@@ -78,8 +78,7 @@ class SearchBar extends Component {
             <input onChange={this.handleChange} 
             value={search}
             className="search-input"
-            type="text"
-            placeholder="Introduce tu búsqueda..."/>
+            type="text"/>
             <span></span>
             {/* <button className="searchButton" onClick={() =>  handleSearch(search)}>Search</button> */}
             </div>
