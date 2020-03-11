@@ -25,23 +25,54 @@ router.post('/addproject', (req, res, next) => {
   console.log(req.body)
    Project.create(req.body)
    .then (newProject => {
+     
      console.log(newProject)
      res.json(newProject)
     })
-    .catch(err => console.log(err))
-         
+    .catch(err => console.log(err))     
+});
+
+router.get('/projects/:id', (req, res, next) => {
+    Project.find({
+            subscribers: req.params.id
+        })
+   
+        .then(projects => res.json(projects))
 })
+
+
 router.put("/edit/:id", (req, res, next) => {
   Project.findByIdAndUpdate(req.params.id, req.body).then(updatedFoundation =>
     res.json(updatedFoundation)
   );
 });
 
+router.put('/deletesubscriber/:id', (req, res, next) => {
+  const {
+      SUBSCRIPTOR
+  } = req.body
+  Project.findByIdAndUpdate(req.params.id, {
+          $pull: {
+            subscribers: SUBSCRIPTOR
+          }
+      }, {
+          new: true
+      })
+      .then(user => res.json({
+          status: 'Project modified',
+          user: user
+      }))
+      .catch(err => next(new Error(err)))
+})
+
+
 router.delete("/delete/:id", (req, res, next) => {
   Project.findByIdAndDelete(req.params.id).then(deletedProject =>
     res.json({ deleted: true, deletedProject })
   );
 });
+
+
 
 
 

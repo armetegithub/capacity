@@ -75,13 +75,26 @@ router.post('/login', (req, res, next) => {
 });
 
 
+// router.get('/currentuser', (req,res,next) => {
+//   if(req.user){
+//     res.status(200).json(req.user);
+//   }else{
+//     next(new Error('Not logged in'))
+//   }
+// })
 router.get('/currentuser', (req,res,next) => {
   if(req.user){
-    res.status(200).json(req.user);
+    User.findById(req.user.id)
+    .populate("foundations_created")
+    .then(userFoundations => {
+      console.log(userFoundations);
+      res.status(200).json(userFoundations)
+    })
+    .catch(err => console.log(err));
   }else{
     next(new Error('Not logged in'))
   }
-})
+});
 
 
 router.get('/logout', (req,res) => {
