@@ -3,6 +3,7 @@ const router = express.Router();
 
 const User = require("../../models/User");
 const Project = require("../../models/Project");
+const Foundation = require("../../models/Foundation");
 
 //Muestra todas las fundaciones registradas en la plataforma
 router.get("/", (req, res, next) => {
@@ -66,10 +67,22 @@ router.put('/deletesubscriber/:id', (req, res, next) => {
 })
 
 
-router.delete("/delete/:id", (req, res, next) => {
-  Project.findByIdAndDelete(req.params.id).then(deletedProject =>
-    res.json({ deleted: true, deletedProject })
-  );
+router.post("/delete/:userId/:projectId", (req, res, next) => {
+  // busco el proyecto a borrar 
+  Project.findById(req.params.projectId)
+  .then(project=> {
+    // Busco la fundación de ese proyecto
+    Foundation.find(project.foundation)
+    .then(foundation => {
+      // Si el administrador de esa fundación es igual que el current user...
+      if(foundation[0].admin == req.params.userId){
+        // Entonces borra el proyecto
+        Project.findByIdAndDelete(req.params.projectId).then(deletedProject =>
+          res.json({ deleted: true, deletedProject })
+        );
+      }
+    })
+  })
 });
 
 

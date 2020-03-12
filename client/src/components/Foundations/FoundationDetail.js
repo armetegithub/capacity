@@ -26,19 +26,6 @@ export default class FoundationDetail extends React.Component {
   };
 
 
-
-  // deleteproject(projectID, FOUNDATION){
-  //     axios.put(`http://localhost:3001/api/delete/${projectID}` ,{FOUNDATION})
-  //       .then(_=> {
-  //         this.fetchAllInfo()
-  //       })
-  //       .catch(_=> {
-  //         this.setState({
-  //           error: true
-  //         });
-  //       });
-  //   }
-
   render() {
     console.log(this.state.foundation);
     return (
