@@ -27,10 +27,17 @@ class ProjectsService {
     //   .then(response => response.data)
     //  }
 
+
+
      deleteProject = (idProject, idUser) => {
       return this.service.post(`/delete/${idUser}/${idProject}`)
       .then(response => response.data)
     }
+
+    editProject = (idProject, project) => {
+      return this.service.put(`/edit/${idProject}`, project)
+      .then(response => response.data)
+    } 
 
     oneProject = id => this.service.get(`/${id}`).then(response => response.data);
 

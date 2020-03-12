@@ -3,7 +3,7 @@ import ProjectItem from "../contents/ProjectItem";
 import "./Project.scss";
 import "typeface-roboto";
 import Header from "../header/Header";
-import SearhcBar from "../Searchbar/SearchBar";
+import SearchBar from "../Searchbar/SearchBar";
 import Navigator from "../navbar/Navigavtor";
 
 class Projects extends Component {
@@ -24,7 +24,9 @@ class Projects extends Component {
       <div className="contents">
         <h3>PROYECTOS</h3>
         <div className="projects-search">
-          <SearhcBar  handleSearch={this.handleSearch} />
+        <SearchBar                     
+          filterProjects={(e)=>this.props.filterProjects(e)}
+          />
         </div>
 
         <div className="contenedor">

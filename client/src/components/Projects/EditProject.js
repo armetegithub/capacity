@@ -2,28 +2,31 @@ import React from "react";
 import startup from '../contents/startup.svg';
 import ProjectsService from "../../service/ProjectsService";
 
-export default class NewProject extends React.Component {
+export default class EditProject extends React.Component {
   projectsService = new ProjectsService();
 
   state = {
-     name: "", info: ""
+     name: null, info: null
   };
 
   componentDidMount() {}
   handleChange = event => {
-    const { name, value } = event.target;
+    let { name, value } = event.target;
+    console.log(name, value);
+    name = name !==  "" ? name : null;
+    value = value !==  "" ? value : null 
     this.setState({ [name]: value });
    
   };
   handleFormSubmit = e => {
     e.preventDefault();
-    this.projectsService.editProject(this.state);
+    this.projectsService.editProject(this.props.match.params.id, this.state);
   };
 
   render() {
     return (
       <div className="editProject">
-        <h1>New Project Page</h1>
+        <h1>Edit Project Page</h1>
         <img src={startup} alt="startup_project" className="portada"></img>
 
         <form onSubmit={this.handleFormSubmit}>

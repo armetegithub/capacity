@@ -20,6 +20,9 @@ import NewFoundation from "./components/Foundations/PostFoundation";
 import NewProject from "./components/Projects/PostProject";
 import UserDetail from "./components/User/UserDetail";
 
+import EditProject from './components/Projects/EditProject';
+
+
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends React.Component {
 
@@ -30,7 +33,8 @@ class App extends React.Component {
     this.state = {
       loggedInUser: null,
       projects: [],
-      foundations: []
+      projectsAll: [],
+      foundations: [],
     };
     this.service = new AuthService();
     this.ProjectsService = new ProjectsService();
@@ -38,6 +42,23 @@ class App extends React.Component {
     this.fetchUser();
     this.fetchProjects();
     this.fetchFoundations();
+  }
+
+  componentDidMount = () => {
+
+    console.log(this.state.projectsAll)
+  }
+ 
+  filterProjects = (e) => {
+    const filteredProjects=this.state.projectsAll.filter(project => {
+      
+      return project.name.toLowerCase().includes(e.target.value.toLowerCase())
+    })
+    // console.log(filteredProjects);
+    console.log(this.state.projectsAll)
+    this.setState({
+      projects: filteredProjects
+    })
   }
 
   getUser = userObj => {
@@ -82,6 +103,7 @@ class App extends React.Component {
   fetchProjects = () => {
     return this.ProjectsService.allProjects().then(allProjects => {
       this.setState({
+        projectsAll: allProjects,
         projects: allProjects
       });
     });
@@ -128,6 +150,14 @@ class App extends React.Component {
     })
   }
 
+  editProject = () => {
+    return this.ProjectsService.editProject().then(editProject => {
+      this.setState({
+        projects: editProject
+      })
+    })
+  }
+
  
 
   render() {
@@ -154,9 +184,11 @@ class App extends React.Component {
                   <Projects
                     fetchProjects={this.fetchProjects}
                     projects={this.state.projects}
+                    filterProjects={this.filterProjects}
                   />
                 )}
-              />k
+              />
+              
 
               {/* Muestra todas las fundaciones */}
               <Route
@@ -188,6 +220,14 @@ class App extends React.Component {
               render={() => (
                 <NewProject />
               )}></Route>
+
+              <Route path="/editproject/:id"
+              render={props => 
+                <EditProject {...props} />
+              }></Route>
+
+
+
 
               <Route path="/account/:id"
               render={() => (<UserDetail userInSession={this.state.loggedInUser} getUser={this.getUser}/> 

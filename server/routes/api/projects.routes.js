@@ -43,7 +43,8 @@ router.get('/projects/:id', (req, res, next) => {
 
 
 router.put("/edit/:id", (req, res, next) => {
-  Project.findByIdAndUpdate(req.params.id, req.body).then(updatedFoundation =>
+
+  Project.findByIdAndUpdate(req.params.id, {$set:req.body}).then(updatedFoundation =>
     res.json(updatedFoundation)
   );
 });
