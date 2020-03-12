@@ -4,6 +4,8 @@ import FoundationsService from "../../service/FoundationsService";
 import ProjectItem from "../contents/ProjectItem";
 import './FoundationDetail.scss';
 import SearhcBar from "../Searchbar/SearchBar";
+import axios from 'axios';
+import DeleteProject from "../Projects/DeleteProject";
 export default class FoundationDetail extends React.Component {
   
 
@@ -22,6 +24,20 @@ export default class FoundationDetail extends React.Component {
       .then(onefoundation => this.setState({ foundation: onefoundation }))
       .catch(err => console.log(err));
   };
+
+
+
+  // deleteproject(projectID, FOUNDATION){
+  //     axios.put(`http://localhost:3001/api/delete/${projectID}` ,{FOUNDATION})
+  //       .then(_=> {
+  //         this.fetchAllInfo()
+  //       })
+  //       .catch(_=> {
+  //         this.setState({
+  //           error: true
+  //         });
+  //       });
+  //   }
 
   render() {
     console.log(this.state.foundation);
@@ -42,8 +58,10 @@ export default class FoundationDetail extends React.Component {
 
         <div className="despliegue-proyect">
         {this.state.foundation && this.state.foundation.projects.map(project => (
-            
+            <div>
             <ProjectItem project={project} key={project._id} />
+       
+            </div>
                   
         ))}
         </div>

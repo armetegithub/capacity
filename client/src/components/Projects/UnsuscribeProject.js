@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import './ProjectItem.scss';
+// import './ProjectItem.scss';
 
 
-class ProjectItem extends Component {
+class UnsuscribeProject extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,6 +15,14 @@ class ProjectItem extends Component {
     };
   }
 
+//   componentDidMount = () => this.oneProject();
+//   oneProject = () => {
+//     this.services
+//       .oneProject(this.props.match.params.id)
+//       .then(oneproject => this.setState({ project: oneproject }))
+//       .catch(err => console.log(err));
+//   };
+
   handleFormSubmit = e => {
     e.preventDefault()
     this.props.unfollowproject()
@@ -24,6 +32,7 @@ class ProjectItem extends Component {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
+  
 
 
 
@@ -36,10 +45,10 @@ class ProjectItem extends Component {
         <Link to={`/projects/${this.props.project._id}`}><h1>{this.props.project.name}</h1></Link>
         <Link to={`/projects/${this.props.project._id}`}><img src={this.props.project.imageURL} width="300px" /></Link>
         <Link to={`/projects/${this.props.project._id}`}><p>{this.props.project.info}</p></Link>
-        {/* <form onSubmit={e => this.handleFormSubmit(e)}>
+        <form onSubmit={e => this.handleFormSubmit(e)}>
         <input className="button" type="submit" value="Dejar de Seguir" />
         </form>
-        */}
+       
 
       </div>
     </div>
@@ -47,8 +56,4 @@ class ProjectItem extends Component {
 }
 }
 
-
-
-
-
-export default ProjectItem;
+export default UnsuscribeProject;

@@ -1,5 +1,5 @@
 import React from "react";
-
+import startup from '../contents/startup.svg';
 import ProjectsService from "../../service/ProjectsService";
 
 export default class NewProject extends React.Component {
@@ -26,6 +26,7 @@ export default class NewProject extends React.Component {
     return (
       <div className="NewProject">
         <h1>New Project Page</h1>
+        <img src={startup} alt="startup_project" className="portada"></img>
 
         <form onSubmit={this.handleFormSubmit}>
           <fieldset>

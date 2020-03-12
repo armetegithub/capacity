@@ -21,6 +21,12 @@ class ProjectsService {
       .then(response => response.data)
     }
 
+    deleteProject = (idProject, idFoundation) => {
+      console.log(idFoundation)
+      return this.service.post(`/delete/${idProject}`, idFoundation)
+      .then(response => response.data)
+     }
+
     oneProject = id => this.service.get(`/${id}`).then(response => response.data);
 
     addProject = project => {

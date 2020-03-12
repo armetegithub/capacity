@@ -23,6 +23,19 @@ export default class ProjectDetail extends React.Component {
   
 
  }
+
+ deleteProject = () => {
+    this.services.deleteProject(this.state.project._id)
+    .then(deleteProject => {
+      this.setState({
+        project:deleteProject
+      })
+      .catch(err => console.log)
+    })
+  }
+
+
+
   componentDidMount = () => this.oneProject();
   oneProject = () => {
     this.services
@@ -41,6 +54,7 @@ export default class ProjectDetail extends React.Component {
             <img src={this.state.project.imageURL} />
             <p>{this.state.project.info}</p>
             <button onClick={()=>this.subscribeProject()}>Inscribirse</button>
+            <button onClick={()=>this.deleteProject()}>Eliminar proyecto</button>
           </div>
         ) : (
           console.log("No hay na")

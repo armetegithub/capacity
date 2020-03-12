@@ -212,7 +212,7 @@ let foundations = [
    email: "ewqewqeqwdwq@gmail.com",
    comunidad: "Cataluña",
    admin: user2,
-   imageURL: "https://prnoticias.com/media/k2/items/cache/82b4e06eeb1257ca1505cd212e65d75c_XL.jpg?t=1569487617",
+   imageURL: "https://autismomadrid.es/wp-content/uploads/2014/06/logo_fundacion_universia.jpg",
    projects: [proj2]
  },
 
@@ -224,7 +224,7 @@ let foundations = [
    email:"reojwrjeow@gmail.com",
    comunidad: "Comunidad valenciana",
    admin: user3,
-   imageURL: "https://www.predif.org/sites/default/files/images/banco_imagenes/logos/Logo_Predif_sin_texto2.jpg",
+   imageURL: "https://lh3.googleusercontent.com/proxy/QYvdLbDu7Jt9TUHhu6CvrgPnX1tqr8zYoqXasEZg6mnAGwQkAhE0aegPt5V-Y9WxutXKzMhbC2N7XXJsPthNunQduYJKB4QY91SeSWPaNQeDLhl92OeWSTg",
    projects: [proj3]
 
  },
@@ -251,7 +251,7 @@ let foundations = [
   email: "fedace@yahoo.com",
   comunidad: "País Vasco",
   admin: user5,
-  imageURL: "https://enfermedades-raras.org/images/fundacionfederslider.jpg",
+  imageURL: "https://fedace.org/files/MSCFEDACE/2020-2/27-14-5-19.admin.captura1.jpg",
   projects: [proj5]
 
 
@@ -279,7 +279,7 @@ let foundations = [
   email: "asocide@yahoo.com",
   comunidad: "Andalucía",
   admin: user7,
-  imageURL: "https://lh3.googleusercontent.com/proxy/t_KWQtO5a6xm1seCHjh-R-PByZyrzialv0vlc8poaEiDuUOfyORORopz_FKdRh8YqzQK_3BYxkCkjuLpss4ktGDl8U8Qn1C6AkVDc_HtK1v5yO-oNu0GnN1HEboMGSuHnqn2A1MRwv0Ug8eMjtcQjpI",
+  imageURL: "http://www.discapacidadenandalucia.es/wp-content/uploads/2018/02/25-a%C3%B1os-asocide.png",
   projects: [proj7]
 
  },
@@ -290,7 +290,7 @@ let foundations = [
    email: "crecimientoe@yahoo.com",
    comunidad: "Extremadura",
    admin: user8,
-   imageURL: "https://lh3.googleusercontent.com/proxy/t_KWQtO5a6xm1seCHjh-R-PByZyrzialv0vlc8poaEiDuUOfyORORopz_FKdRh8YqzQK_3BYxkCkjuLpss4ktGDl8U8Qn1C6AkVDc_HtK1v5yO-oNu0GnN1HEboMGSuHnqn2A1MRwv0Ug8eMjtcQjpI",
+   imageURL: "https://lh3.googleusercontent.com/proxy/QYvdLbDu7Jt9TUHhu6CvrgPnX1tqr8zYoqXasEZg6mnAGwQkAhE0aegPt5V-Y9WxutXKzMhbC2N7XXJsPthNunQduYJKB4QY91SeSWPaNQeDLhl92OeWSTg",
    projects: [proj8]
  
   },
@@ -308,12 +308,12 @@ let foundations = [
     },
     {
       _id:found10,
-       name: "ASEM",
+       name: "APASCOVI",
        description: "En APASCOVI tratamos de dar respuesta a las necesidades de las personas con discapacidad intelectual desde el nacimiento hasta la edad adulta. Gestionamos centros y servicios en varios municipios y somos un referente en la Comunidad de Madrid.",
        email: "apascovi@yahoo.com",
        comunidad: "Comunidad de Madrid",
        admin: user10,
-       imageURL: "https://apascovifundacion.org/wp-content/uploads/2013/04/fundacion_apascovi_transparente.png",
+       imageURL: "https://apascovifundacion.org/wp-content/uploads/2018/04/logo-40-A%C3%91OS-1.jpg",
        projects: [proj10]
      
       },

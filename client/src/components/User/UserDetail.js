@@ -6,7 +6,8 @@ import FoundationsItem from "../Foundations/FoundationItem";
 import portadaprofile from "../contents/start_up.svg";
 import "./UserDetail.scss";
 import axios from 'axios'
-import ProjectsItem from "../../components/contents/ProjectItem"
+import ProjectsItem from "../../components/contents/ProjectItem";
+import UnsuscribeProject from "../../components/Projects/UnsuscribeProject"
 
 export default class UserDetail extends React.Component {
   constructor(props) {
@@ -79,7 +80,7 @@ export default class UserDetail extends React.Component {
        
             {this.state.subscribers.map(project => (
                <div className="contenedor">
-                <ProjectsItem unfollowproject={()=>this.unfollowproject(project._id, this.props.userInSession._id)} project={project} key={project._id}/>
+                <UnsuscribeProject unfollowproject={()=>this.unfollowproject(project._id, this.props.userInSession._id)} project={project} key={project._id}/>
                 
                 {/* <button onClick={() => 
               
