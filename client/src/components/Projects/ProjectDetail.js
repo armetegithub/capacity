@@ -30,7 +30,7 @@ export default class ProjectDetail extends React.Component {
       this.setState({
         project:deleteProject
       })
-      .catch(err => console.log)
+      // .catch(err => console.log(err))
     })
   }
 
