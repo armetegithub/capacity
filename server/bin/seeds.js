@@ -224,7 +224,7 @@ let foundations = [
    email:"reojwrjeow@gmail.com",
    comunidad: "Comunidad valenciana",
    admin: user3,
-   imageURL: "https://lh3.googleusercontent.com/proxy/QYvdLbDu7Jt9TUHhu6CvrgPnX1tqr8zYoqXasEZg6mnAGwQkAhE0aegPt5V-Y9WxutXKzMhbC2N7XXJsPthNunQduYJKB4QY91SeSWPaNQeDLhl92OeWSTg",
+   imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZpXdMz_BqlveOAgKMsKe6BMypGGp8z2vxnZzlThBmgj-s_kDX",
    projects: [proj3]
 
  },

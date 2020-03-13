@@ -29,7 +29,7 @@ export default class FoundationDetail extends React.Component {
   render() {
     console.log(this.state.foundation);
     return (
-      <div className="foundation">
+      <div className="Fundaciiones">
       <div className="button">
       <Link to="/addproject">Crear Nuevo Proyecto</Link>
       </div>

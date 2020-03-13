@@ -1,0 +1,18 @@
+.project{
+
+    background-color: red;
+
+    .cosa {
+        -moz-box-shadow: inset 0px 1px 0px 0px #4A72B2;
+        -webkit-box-shadow: inset 0px 1px 0px 0px #4A72B2;
+        box-shadow: inset 0px 1px 0px 0px #4A72B2;
+        background-color: #4A72B2;
+        border: 1px solid #4A72B2;
+        display: inline-block;
+        cursor: pointer;
+        color: #FFFFFF;
+        padding: 8px 18px;
+        text-decoration: none;
+        font: 12px Arial, Helvetica, sans-serif;
+    }
+}

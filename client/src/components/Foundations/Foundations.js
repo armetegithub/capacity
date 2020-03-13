@@ -31,7 +31,7 @@ class Foundations extends Component {
              <Link className="button" to="/addFoundation">Crear fundación</Link>
           </div>
       
-        <h3>Foundations</h3>
+        <h3>Fundaciones</h3>
        
        
         
