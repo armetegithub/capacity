@@ -19,7 +19,7 @@ import Navigator from "./components/navbar/Navigavtor";
 import NewFoundation from "./components/Foundations/PostFoundation";
 import NewProject from "./components/Projects/PostProject";
 import UserDetail from "./components/User/UserDetail";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import EditProject from './components/Projects/EditProject';
 
 
@@ -176,6 +176,16 @@ class App extends React.Component {
               />
             </header>
             <Switch>
+            <Route
+                exact
+                path="/"
+                render={() => (
+                  <Contents
+                    fetchProjects={this.fetchProjects}
+                    projects={this.state.projects}
+                  />
+                )}
+              />
               {/* Muestra todos los proyectos */}
               <Route
                 exact

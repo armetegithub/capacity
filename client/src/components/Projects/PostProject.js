@@ -1,6 +1,8 @@
 import React from "react";
 import startup from '../contents/startup.svg';
 import ProjectsService from "../../service/ProjectsService";
+import './PostProject.scss';
+
 
 export default class NewProject extends React.Component {
   projectsService = new ProjectsService();
@@ -24,11 +26,12 @@ export default class NewProject extends React.Component {
 
   render() {
     return (
+     
       <div className="NewProject">
-        <h1>New Project Page</h1>
+        
         <img src={startup} alt="startup_project" className="portada"></img>
 
-        <form onSubmit={this.handleFormSubmit}>
+        <form className="form-style-9" onSubmit={this.handleFormSubmit}>
           <fieldset>
             <label>Nombre de la proyecto:</label>
             <input

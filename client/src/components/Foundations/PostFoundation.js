@@ -1,5 +1,5 @@
 import React from "react";
-
+import './PostFoundation.scss'
 import FoundationsService from "../../service/FoundationsService";
 
 export default class NewFoundation extends React.Component {
@@ -35,7 +35,7 @@ export default class NewFoundation extends React.Component {
       <div className="NewFoundation">
         <h1>New Foundation Page</h1>
 
-        <form onSubmit={this.handleFormSubmit}>
+        <form className="form-style-9" onSubmit={this.handleFormSubmit}>
           <fieldset>
             <label>Nombre de la fundación:</label>
             <input

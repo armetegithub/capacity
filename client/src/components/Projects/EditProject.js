@@ -1,6 +1,7 @@
 import React from "react";
 import startup from '../contents/startup.svg';
 import ProjectsService from "../../service/ProjectsService";
+import './EditProject.scss'
 
 export default class EditProject extends React.Component {
   projectsService = new ProjectsService();
@@ -29,7 +30,7 @@ export default class EditProject extends React.Component {
         <h1>Edit Project Page</h1>
         <img src={startup} alt="startup_project" className="portada"></img>
 
-        <form onSubmit={this.handleFormSubmit}>
+        <form className="form-style-9" onSubmit={this.handleFormSubmit}>
           <fieldset>
             <label>Edita el nombre de proyecto:</label>
             <input

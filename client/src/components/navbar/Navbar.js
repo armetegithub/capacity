@@ -27,7 +27,7 @@ class Navbar extends Component {
     
         <div className="navbar-div">
           <nav className="nav-style">
-            <Link to="#">
+            <Link to="/">
               <img src={logo} alt="logo" width="400px" class="logo" />
             </Link>
             <ul>
@@ -45,7 +45,7 @@ class Navbar extends Component {
                   <a onClick={this.handleLogout}>Logout</a>
                 </li>
               </div>
-              <span>Hola, {this.state.loggedInUser.username}</span>
+            
             </ul>
           </nav>
         </div>

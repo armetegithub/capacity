@@ -7,6 +7,7 @@ import Header from "../header/Header";
 import SearhcBar from "../Searchbar/SearchBar";
 import Navigator from "../navbar/Navigavtor";
 import './FoundationDetail.scss';
+import './Foundations.scss';
 
 class Foundations extends Component {
   constructor(props) {
@@ -23,11 +24,16 @@ class Foundations extends Component {
 
   render() {
     return (
+
+    
       <div className="contents">
+          <div className="button">
+             <Link className="button" to="/addFoundation">Crear fundación</Link>
+          </div>
       
         <h3>Foundations</h3>
-        <SearhcBar  handleSearch={this.handleSearch} />
-        <Link className="button" to="/addFoundation">Crear fundación</Link>
+       
+       
         
         <div className="contenedor">
           {this.props.foundations.map(foundation => (
