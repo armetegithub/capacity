@@ -15,7 +15,7 @@ class Header extends Component {
       return (<div className="header">
   
         <div className="cabecera-portada">
-          <h1>Bienvenidos a capacity</h1>
+          <h1>Bienvenidos a Capacity</h1>
           <h2>¿Estás listo para poner al máximo tus capacidades?</h2>
           <img src={portada} alt="portada" width="600px" class="portada" />
         </div>

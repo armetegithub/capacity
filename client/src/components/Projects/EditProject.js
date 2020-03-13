@@ -21,13 +21,17 @@ export default class EditProject extends React.Component {
   };
   handleFormSubmit = e => {
     e.preventDefault();
-    this.projectsService.editProject(this.props.match.params.id, this.state);
-  };
+    this.projectsService.editProject(this.props.match.params.id, this.state)
+  }
 
   render() {
     return (
+
+
+    <div className="titulo">
+      <h1>Edita tu proyecto</h1>
       <div className="editProject">
-        <h1>Edit Project Page</h1>
+       
         <img src={startup} alt="startup_project" className="portada"></img>
 
         <form className="form-style-9" onSubmit={this.handleFormSubmit}>
@@ -49,10 +53,13 @@ export default class EditProject extends React.Component {
               value={this.state.description}
               onChange={e => this.handleChange(e)}
             />
+            
           </fieldset>
-
-          <input type="submit" value="Crear nuevo proyecto" />
+          
+          
+          <input type="submit" value="Editar Proyecto" />
         </form>
+      </div>
       </div>
     );
   }

@@ -1,3 +1,28 @@
+
+.titulo{
+
+    h1{
+        color: #444242
+    }
+}
+
+.editProject{
+
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+    align-content: stretch;
+    
+    img{
+        width: 500px;
+        margin-left: 70px;
+    }
+}
+
+
+
 .form-style-9{
     max-width: 450px;
     background: #FAFAFA;

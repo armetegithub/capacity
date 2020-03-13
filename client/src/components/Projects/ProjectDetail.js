@@ -46,7 +46,7 @@ export default class ProjectDetail extends React.Component {
             <h1>{this.state.project.name}</h1>
             <img src={this.state.project.imageURL} />
             <p>{this.state.project.info}</p>
-            {/* <Link to=`/editproject/${this.state.project._id}`</Link> */}
+            <Link to={`/editproject/${this.state.project._id}`}>Editar</Link>
             <button onClick={()=>this.subscribeProject()}>Inscribirse</button>
             {this.getOwnerOfProject() && <button onClick={()=>this.deleteProject()}>Eliminar proyecto</button>}
           </div>

@@ -27,6 +27,10 @@ export default class NewProject extends React.Component {
   render() {
     return (
      
+      <div className="titulo">
+        <h1>
+          Crear Nuevo Proyecto
+        </h1>
       <div className="NewProject">
         
         <img src={startup} alt="startup_project" className="portada"></img>
@@ -54,6 +58,7 @@ export default class NewProject extends React.Component {
 
           <input type="submit" value="Crear nuevo proyecto" />
         </form>
+      </div>
       </div>
     );
   }

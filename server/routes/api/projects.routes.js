@@ -43,11 +43,19 @@ router.get('/projects/:id', (req, res, next) => {
 
 
 router.put("/edit/:id", (req, res, next) => {
-
-  Project.findByIdAndUpdate(req.params.id, {$set:req.body}).then(updatedFoundation =>
+  console.log(req.body)
+    let params = { 
+      name: req.body.name,
+      info: req.body.info, 
+  };
+  for(let prop in params) if(!params[prop]) delete params[prop];
+  Project.findByIdAndUpdate(req.params.id, params).then(updatedFoundation =>
     res.json(updatedFoundation)
   );
 });
+
+
+
 
 router.put('/deletesubscriber/:id', (req, res, next) => {
   const {
